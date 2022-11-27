@@ -10,6 +10,10 @@ export const Container = styled.main `
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
 `
 
 export const Wrapper = styled.div `
@@ -38,6 +42,10 @@ export const Title = styled.h2 `
     line-height: 44px;
 
     color: #fff;
+
+    @media (max-width: 900px) {
+        width: 100%;
+    }
 `
 
 export const TitleLogin = styled.p `

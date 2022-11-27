@@ -1,4 +1,6 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import { Button } from '../button'
 import logo  from '../../assets/logo-dio.png';
 
@@ -13,12 +15,27 @@ import {
     Wrapper
 } from './styles'
 
+
 const Header = ({autenticado}) => {
+    const navigate = useNavigate();
+
+    const handleSignIn = () => {
+        navigate('/login')
+    }
+
+    const handleRegister = () => {
+        navigate('/cadastro')
+    }
+
+    const handleHome = () => {
+        navigate('/')
+    }
+
   return (
     <Wrapper>
         <Container>
             <Row>
-                <img src={logo} alt='Logo da DIO'/>
+                <img src={logo} alt='Logo da DIO' onClick={handleHome}/>
                 {autenticado ? (
                     <>
                 <BuscarInputContainer>
@@ -34,9 +51,9 @@ const Header = ({autenticado}) => {
                 <UserPicture src="https://avatars.githubusercontent.com/u/92283190?v=4"></UserPicture>
                 ) : (
                 <>
-                    <MenuRight href='#'>Home</MenuRight>
-                    <Button title="Entrar"/>
-                    <Button title="Cadastrar"/>
+                    <MenuRight href='/'>Home</MenuRight>
+                    <Button title="Entrar" onClick={handleSignIn}/>
+                    <Button title="Cadastrar" onClick={handleRegister}/>
                 </>
                 )}
             </Row>

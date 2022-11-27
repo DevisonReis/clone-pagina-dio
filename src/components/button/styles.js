@@ -19,11 +19,13 @@ export const ButtonContainer = styled.button `
     line-height: 25px;
     align-items: center;
     tex-align: center;
+    cursor: pointer;
 
     ${({variant}) => variant !== "primary" && css `
         min-width: 167px;
         height: 33px;
         border: 1px solid #e4105d;
+        margin-top: 10px;
 
         background: #e4105d;
 
